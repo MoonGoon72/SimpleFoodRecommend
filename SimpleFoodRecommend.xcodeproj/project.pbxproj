@@ -11,6 +11,7 @@
 		BAA77F1C29A6025D005E1DC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA77F1B29A6025D005E1DC2 /* ContentView.swift */; };
 		BAA77F1E29A6025E005E1DC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA77F1D29A6025E005E1DC2 /* Assets.xcassets */; };
 		BAA77F2129A6025E005E1DC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA77F2029A6025E005E1DC2 /* Preview Assets.xcassets */; };
+		BAA77F2829A649B4005E1DC2 /* MenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA77F2729A649B4005E1DC2 /* MenuDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BAA77F1B29A6025D005E1DC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BAA77F1D29A6025E005E1DC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAA77F2029A6025E005E1DC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAA77F2729A649B4005E1DC2 /* MenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BAA77F1929A6025D005E1DC2 /* SimpleFoodRecommendApp.swift */,
 				BAA77F1B29A6025D005E1DC2 /* ContentView.swift */,
+				BAA77F2729A649B4005E1DC2 /* MenuDataManager.swift */,
 				BAA77F1D29A6025E005E1DC2 /* Assets.xcassets */,
 				BAA77F1F29A6025E005E1DC2 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA77F2829A649B4005E1DC2 /* MenuDataManager.swift in Sources */,
 				BAA77F1C29A6025D005E1DC2 /* ContentView.swift in Sources */,
 				BAA77F1A29A6025D005E1DC2 /* SimpleFoodRecommendApp.swift in Sources */,
 			);
