@@ -65,52 +65,57 @@ import NMapsMap
 
 struct ContentView: View {
     @State var recommendedMenu: String = "음식 추천"
-    @State var isPresentedMap = false
     private var menuDataManager: MenuDataManager = MenuDataManager()
+    
+    
     
     var body: some View {
         ZStack {
             NavigationStack {
-                VStack {
                     Spacer()
-                    Image(recommendedMenu)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 250)
-                        .cornerRadius(30)
-                    
-                    Text(recommendedMenu)
-                        .font(.system(size: 30))
-                        .padding(.bottom, 10)
-                    NavigationLink {
-                        MyView()
-                    } label: {
-                        Text("지도")
-                    }
-                    Button {
-                        isPresentedMap = true
-                    } label: {
-                        Text("GPS")
-                    }.sheet(isPresented: $isPresentedMap) {
-                        MyView()
-                    }
-                    
+                    recommendedLabel
+                    nearbyResturant
                     Spacer()
-                    Button {
-                        recommendedMenu = menuDataManager.recommendMenu()
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 170, height: 80)
-                            Text("음식을 추천해드릴게요!").foregroundColor(.black)
-                        }
-                        
-                    }
+                    foodRecommendButton
                     Spacer()
-                        .frame(height: 100)
-                }
-                .padding()
+                    .frame(height: 100)
             }
+            .padding()
+        }
+    }
+    
+    var recommendedLabel: some View {
+        VStack {
+            Image(recommendedMenu)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 250)
+                .cornerRadius(30)
+            
+            Text(recommendedMenu)
+                .font(.system(size: 30))
+                .padding(.bottom, 10)
+        }
+    }
+    
+    var nearbyResturant: some View {
+        NavigationLink {
+            MyView()
+        } label: {
+            Label("주변 \(recommendedMenu) 가게", systemImage: "map")
+        }
+    }
+    
+    var foodRecommendButton: some View {
+        Button {
+            recommendedMenu = menuDataManager.recommendMenu()
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 170, height: 80)
+                Text("음식을 추천해드릴게요!").foregroundColor(.black)
+            }
+            
         }
     }
 }
