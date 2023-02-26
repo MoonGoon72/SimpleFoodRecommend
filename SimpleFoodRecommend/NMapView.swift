@@ -25,18 +25,21 @@ class NMapsViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         let mapView = NMFMapView(frame: view.frame)
+        let myPosition = NMFMyPositionMode.direction
+        mapView.positionMode = myPosition
+
         let coord = NMGLatLng(lat: 36.3705324, lng: 127.34774832)
         if CLLocationManager.locationServicesEnabled() {
             print("위치 서비스 On 상태")
             locationManager.startUpdatingLocation()
             /// 위도 경도 지점으로 카메라 업데이트
-            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
-            cameraUpdate.animation = .easeIn
-            mapView.moveCamera(cameraUpdate)
+//            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
+//            cameraUpdate.animation = .easeIn
+//            mapView.moveCamera(cameraUpdate)
             /// 마커 찍기
-            let marker = NMFMarker()
-            marker.position  = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0)
-            marker.mapView = mapView
+//            let marker = NMFMarker()
+//            marker.position  = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0)
+//            marker.mapView = mapView
             
             
             
